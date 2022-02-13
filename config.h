@@ -11,7 +11,6 @@ static const char *fonts[]          = { "JetBrains Mono Nerd Font Medium:size=10
 static const char dmenufont[]       = "JetBrains Mono Nerd Font Medium:size=10";
 static const char col_black[]               = "#282a36";
 static const char col_white[]               = "#f8f8f2";
-static const char col_dark_gray[]           = "#44475a";
 static const char col_light_gray[]          = "#44475a";
 static const char col_blue[]                = "#6272a4";
 static const char col_cyan[]                = "#8be9fd";
@@ -24,7 +23,7 @@ static const char col_yellow[]              = "#f1fa8c";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_black, col_black },
-	[SchemeSel]  = { col_white, col_blue,  col_purple },
+	[SchemeSel]  = { col_white, col_dark_gray,  col_purple },
 };
 
 /* tagging */
