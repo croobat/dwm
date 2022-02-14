@@ -47,6 +47,7 @@ static const Rule rules[] = {
 	{ "St",          NULL,          NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,          NULL,          "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 	{ "Godot",       NULL,          NULL,           1 << 2,    0,          0,           0,         0 },
+	{ "qutebrowser", NULL,          NULL,           1 << 0,    0,          0,           0,        -1 },
     { "VSCodium",    "vscodium",    NULL,           1 << 1,    0,          0,           0,         0 },
     { NULL,          NULL,          "WhatsApp",     1 << 4,    0,          0,           0,         1 },
     { "discord",     NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
@@ -120,6 +121,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
     { MODKEY|ControlMask,           XK_j,      pushdown,       {0} },
 	{ MODKEY|ControlMask,           XK_k,      pushup,         {0} },
+	{ MODKEY|ControlMask,           XK_comma,  tagswapmon,     {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_period, tagswapmon,     {.i = -1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
