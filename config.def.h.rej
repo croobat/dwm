@@ -1,25 +1,10 @@
---- config.def.h
-+++ config.def.h
-@@ -3,6 +3,7 @@
- /* appearance */
- static const unsigned int borderpx  = 1;        /* border pixel of windows */
+--- config.def.h	Sun Jul 25 09:58:25 2010 +0100
++++ config.def.h	Sun Jul 25 16:32:38 2010 +0200
+@@ -12,6 +12,7 @@
  static const unsigned int snap      = 32;       /* snap pixel */
-+static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
- static const int showbar            = 1;        /* 0 means no bar */
- static const int topbar             = 1;        /* 0 means bottom bar */
- static const char *fonts[]          = { "monospace:size=10" };
-@@ -26,9 +27,11 @@ static const Rule rules[] = {
- 	 *	WM_CLASS(STRING) = instance, class
- 	 *	WM_NAME(STRING) = title
- 	 */
--	/* class      instance    title       tags mask     isfloating   monitor */
--	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
--	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-+	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-+	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-+	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-+	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-+	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
- };
+ static const Bool showbar           = True;     /* False means no bar */
+ static const Bool topbar            = True;     /* False means bottom bar */
++static const Bool viewontag         = True;     /* Switch view on tag switch */
  
- /* layout(s) */
+ /* tagging */
+ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };

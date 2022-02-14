@@ -1,15 +1,11 @@
---- dwm.c
-+++ dwm.c
-@@ -98,9 +104,11 @@ struct Client {
- 	int basew, baseh, incw, inch, maxw, maxh, minw, minh;
- 	int bw, oldbw;
- 	unsigned int tags;
--	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;
-+	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, isterminal, noswallow;
-+	pid_t pid;
- 	Client *next;
- 	Client *snext;
-+	Client *swallowing;
- 	Monitor *mon;
- 	Window win;
- };
+--- dwm.c	Fri Oct 28 18:43:14 2011 -0700
++++ dwm.c	Fri Oct 28 23:45:12 2011 +0100
+@@ -1418,8 +1416,6 @@
+ 	}
+ 	XSync(dpy, False);
+ 	while(XCheckMaskEvent(dpy, EnterWindowMask, &ev));
+-	if (m == selmon && (m->tagset[m->seltags] & m->sel->tags))
+-		warp(m->sel);
+ }
+ 
+ void
