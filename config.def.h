@@ -33,11 +33,6 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_white, col_light_gray,  col_purple },
 };
 
-static const char *const autostart[] = {
-	/* "alacritty", "-e", "nvim", NULL, */
-	NULL /* terminate */
-};
-
 /* tagging */
 static const char *tags[] = { "web", "dev", "doc", "play", "chat", "fun" };
 
