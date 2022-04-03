@@ -50,11 +50,13 @@ static const Rule rules[] = {
 	{ "Godot",       NULL,          NULL,           1 << 2,    0,          0,           0,         0 },
 	{ "qutebrowser", NULL,          NULL,           1 << 0,    0,          0,           0,        -1 },
     { "VSCodium",    "vscodium",    NULL,           1 << 1,    0,          0,           0,         0 },
-    { "Steam",       NULL,          NULL,           1 << 5,    0,          0,           0,         0 },
-    //{ NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
-    //{ NULL,          NULL,          "cmus v2.9.1",  1 << 3,    0,          0,           0,         1 },
+//  { NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
+//  { NULL,          NULL,          "cmus v2.9.1",  1 << 3,    0,          0,           0,         1 },
     { NULL,          NULL,          "WhatsApp",     1 << 4,    0,          0,           0,         1 },
     { "discord",     NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
+    { "Steam",       NULL,          NULL,           1 << 5,    0,          0,           0,         0 },
+    { NULL,     NULL,          "rofi-beats",           1 << 3,    0,          0,           0,         1 },
+    { NULL,     NULL,          "launch-nvim",           1 << 5,    0,          0,           0,         1 },
 };
 
 /* layout(s) */
