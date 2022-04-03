@@ -55,8 +55,11 @@ static const Rule rules[] = {
     { NULL,          NULL,          "WhatsApp",     1 << 4,    0,          0,           0,         1 },
     { "discord",     NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
     { "Steam",       NULL,          NULL,           1 << 5,    0,          0,           0,         0 },
-    { NULL,     NULL,          "rofi-beats",           1 << 3,    0,          0,           0,         1 },
-    { NULL,     NULL,          "launch-nvim",           1 << 5,    0,          0,           0,         1 },
+    { NULL,          NULL,          "rofi-beats",   1 << 3,    0,          0,           0,         1 },
+    { NULL,          NULL,          "cmus",         1 << 3,    0,          0,           0,         1 },
+    { NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
+    { NULL,          NULL,          "sncli",        1 << 2,    0,          0,           0,         1 },
+    { NULL,          NULL,          "launch-nvim",  1 << 5,    0,          0,           0,         1 },
 };
 
 /* layout(s) */
