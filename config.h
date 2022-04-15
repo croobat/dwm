@@ -44,12 +44,14 @@ static const Rule rules[] = {
 	/* class     instance           title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",        NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ "Pavucontrol", NULL,          NULL,           0,         1,          0,           0,        -1 },
+	{ "Gcolor3",     NULL,          NULL,           0,         1,          0,           0,        -1 },
+	{ NULL,          NULL,          "QEMU/KVM - Connection Details",0,1,   0,           0,        -1 },
 	{ "Firefox",     NULL,          NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "St",          NULL,          NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,          NULL,          "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 	{ "Godot",       NULL,          NULL,           1 << 2,    0,          0,           0,         0 },
 	{ NULL,          "libreoffice", NULL,           1 << 2,    0,          0,           0,        -1 },
-	{ NULL,"sun-awt-X11-XFramePeer",NULL,           1 << 2,    0,          0,           0,        -1 },
+	{ NULL,          "sun-awt-X11-XFramePeer",NULL, 1 << 2,    0,          0,           0,        -1 },
 	{ "qutebrowser", NULL,          NULL,           1 << 0,    0,          0,           0,        -1 },
     { "VSCodium",    "vscodium",    NULL,           1 << 1,    0,          0,           0,         0 },
 //  { NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
