@@ -14,8 +14,10 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "JetBrains Mono Nerd Font Medium:size=10" };
-static const char dmenufont[]       = "JetBrains Mono Nerd Font Medium:size=10";
+//static const char *fonts[]          = { "JetBrains Mono Nerd Font Medium:size=10" };
+static const char *fonts[]          = { "JetBrainsMonoMedium Nerd Font Mono:size=10" };
+//static const char dmenufont[]       = "JetBrains Mono Nerd Font Medium:size=10";
+static const char dmenufont[]       = "JetBrainsMonoMedium Nerd Font Mono:size=10";
 static const char col_black[]               = "#282a36";
 static const char col_white[]               = "#f8f8f2";
 static const char col_light_gray[]          = "#44475a";
@@ -45,6 +47,7 @@ static const Rule rules[] = {
 	{ "Gimp",        NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ "Pavucontrol", NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ "Gcolor3",     NULL,          NULL,           0,         1,          0,           0,        -1 },
+	{ NULL,          NULL,          "Pick",         0,         1,          0,           0,        -1 },
 	{ NULL,          NULL,          "QEMU/KVM - Connection Details",0,1,   0,           0,        -1 },
 	{ "Firefox",     NULL,          NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "St",          NULL,          NULL,           0,         0,          1,           0,        -1 },
@@ -53,17 +56,17 @@ static const Rule rules[] = {
 	{ NULL,          "libreoffice", NULL,           1 << 2,    0,          0,           0,        -1 },
 	{ NULL,          "sun-awt-X11-XFramePeer",NULL, 1 << 2,    0,          0,           0,        -1 },
 	{ "qutebrowser", NULL,          NULL,           1 << 0,    0,          0,           0,        -1 },
-    { "VSCodium",    "vscodium",    NULL,           1 << 1,    0,          0,           0,         0 },
+  { "VSCodium",    "vscodium",    NULL,           1 << 1,    0,          0,           0,         0 },
 //  { NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
 //  { NULL,          NULL,          "cmus v2.9.1",  1 << 3,    0,          0,           0,         1 },
-    { NULL,          NULL,          "WhatsApp",     1 << 4,    0,          0,           0,         1 },
-    { "discord",     NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
-    { "Steam",       NULL,          NULL,           1 << 5,    0,          0,           0,         0 },
-    { NULL,          NULL,          "rofi-beats",   1 << 3,    0,          0,           0,         1 },
-    { NULL,          NULL,          "cmus",         1 << 3,    0,          0,           0,         1 },
-    { NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
-    { NULL,          NULL,          "sncli",        1 << 2,    0,          0,           0,         1 },
-    { NULL,          NULL,          "launch-nvim",  1 << 5,    0,          0,           0,         1 },
+  { NULL,          NULL,          "WhatsApp",     1 << 4,    0,          0,           0,         1 },
+  { "discord",     NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
+  { "Steam",       NULL,          NULL,           1 << 5,    0,          0,           0,         0 },
+  { NULL,          NULL,          "rofi-beats",   1 << 3,    0,          0,           0,         1 },
+  { NULL,          NULL,          "cmus",         1 << 3,    0,          0,           0,         1 },
+  { NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
+  { NULL,          NULL,          "sncli",        1 << 2,    0,          0,           0,         1 },
+  { NULL,          NULL,          "launch-nvim",  1 << 5,    0,          0,           0,         1 },
 };
 
 /* layout(s) */
