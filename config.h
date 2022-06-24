@@ -44,11 +44,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance           title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",        NULL,          NULL,           0,         1,          0,           0,        -1 },
-	{ "Pavucontrol", NULL,          NULL,           0,         1,          0,           0,        -1 },
-	{ "Gcolor3",     NULL,          NULL,           0,         1,          0,           0,        -1 },
-	{ NULL,          NULL,          "Pick",         0,         1,          0,           0,        -1 },
-	{ NULL,          NULL,          "QEMU/KVM - Connection Details",0,1,   0,           0,        -1 },
 	{ "Firefox",     NULL,          NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "St",          NULL,          NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,          NULL,          "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
@@ -57,8 +52,6 @@ static const Rule rules[] = {
 	{ NULL,          "sun-awt-X11-XFramePeer",NULL, 1 << 2,    0,          0,           0,        -1 },
 	{ "qutebrowser", NULL,          NULL,           1 << 0,    0,          0,           0,        -1 },
   { "VSCodium",    "vscodium",    NULL,           1 << 1,    0,          0,           0,         0 },
-//  { NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
-//  { NULL,          NULL,          "cmus v2.9.1",  1 << 3,    0,          0,           0,         1 },
   { NULL,          NULL,          "WhatsApp",     1 << 4,    0,          0,           0,         1 },
   { "discord",     NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
   { "Steam",       NULL,          NULL,           1 << 5,    0,          0,           0,         0 },
@@ -67,6 +60,15 @@ static const Rule rules[] = {
   { NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
   { NULL,          NULL,          "sncli",        1 << 2,    0,          0,           0,         1 },
   { NULL,          NULL,          "launch-nvim",  1 << 5,    0,          0,           0,         1 },
+
+  // Floating windows
+	{ "Gimp",        NULL,          NULL,           0,         1,          0,           0,        -1 },
+	{ "Pavucontrol", NULL,          NULL,           0,         1,          0,           0,        -1 },
+	{ "Gcolor3",     NULL,          NULL,           0,         1,          0,           0,        -1 },
+	{ NULL,          NULL,          "Pick",         0,         1,          0,           0,        -1 },
+	{ NULL, NULL, "QEMU/KVM - Connection Details",  0,         1,          0,           0,        -1 },
+	{ "fontforge",   NULL,          "Open Font",    0,         1,          0,           0,        -1 },
+	{ "fontforge",   NULL,          "Warnings",     0,         1,          0,           0,        -1 },
 };
 
 /* layout(s) */
