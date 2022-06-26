@@ -62,6 +62,7 @@ static const Rule rules[] = {
   { NULL,          NULL,          "launch-nvim",  1 << 5,    0,          0,           0,         1 },
 
   // Floating windows
+	/* class     instance           title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",        NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ "Pavucontrol", NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ "Gcolor3",     NULL,          NULL,           0,         1,          0,           0,        -1 },
@@ -69,6 +70,7 @@ static const Rule rules[] = {
 	{ NULL, NULL, "QEMU/KVM - Connection Details",  0,         1,          0,           0,        -1 },
 	{ "fontforge",   NULL,          "Open Font",    0,         1,          0,           0,        -1 },
 	{ "fontforge",   NULL,          "Warnings",     0,         1,          0,           0,        -1 },
+	{ "Gitk",        NULL,          NULL,           0,         1,          0,           0,        -1 },
 };
 
 /* layout(s) */
