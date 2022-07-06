@@ -48,7 +48,9 @@ static const Rule rules[] = {
 	{ "St",          NULL,          NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,          NULL,          "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 	{ "Godot",       NULL,          NULL,           1 << 2,    0,          0,           0,         0 },
+	{ "Thunderbird", NULL,          NULL,           1 << 2,    0,          0,           0,         0 },
 	{ NULL,          "libreoffice", NULL,           1 << 2,    0,          0,           0,        -1 },
+	{ NULL,          NULL,          "LibreOffice",  1 << 2,    0,          0,           0,        -1 },
 	{ NULL,          "sun-awt-X11-XFramePeer",NULL, 1 << 2,    0,          0,           0,        -1 },
 	{ "qutebrowser", NULL,          NULL,           1 << 0,    0,          0,           0,        -1 },
   { "VSCodium",    "vscodium",    NULL,           1 << 1,    0,          0,           0,         0 },
