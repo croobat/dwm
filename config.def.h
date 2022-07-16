@@ -72,6 +72,7 @@ static const Rule rules[] = {
 	{ NULL, NULL, "QEMU/KVM - Connection Details",  0,         1,          0,           0,        -1 },
 	{ "fontforge",   NULL,          "Open Font",    0,         1,          0,           0,        -1 },
 	{ "fontforge",   NULL,          "Warnings",     0,         1,          0,           0,        -1 },
+	{ "Steam",   NULL,              "Friends List", 0,         1,          0,           0,        -1 },
 	{ "Gitk",        NULL,          NULL,           0,         1,          0,           0,        -1 },
 };
 
