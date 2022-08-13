@@ -48,7 +48,7 @@ static const Rule rules[] = {
 	{ "St",          NULL,          NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,          NULL,          "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 	{ "Godot",       NULL,          NULL,           1 << 2,    0,          0,           0,         0 },
-	{ "Thunderbird", NULL,          NULL,           1 << 2,    0,          0,           0,         0 },
+	{ "Thunderbird", NULL,          NULL,           1 << 2,    0,          0,           0,        -1 },
 	{ NULL,          "libreoffice", NULL,           1 << 2,    0,          0,           0,        -1 },
 	{ NULL,          NULL,          "LibreOffice",  1 << 2,    0,          0,           0,        -1 },
 	{ NULL,          "sun-awt-X11-XFramePeer",NULL, 1 << 2,    0,          0,           0,        -1 },
@@ -73,7 +73,10 @@ static const Rule rules[] = {
 	{ "fontforge",   NULL,          "Open Font",    0,         1,          0,           0,        -1 },
 	{ "fontforge",   NULL,          "Warnings",     0,         1,          0,           0,        -1 },
 	{ "Steam",   NULL,              "Friends List", 0,         1,          0,           0,        -1 },
+	{ NULL,   NULL,          "XAMPP Control Panel", 0,         1,          0,           0,        -1 },
 	{ "Gitk",        NULL,          NULL,           0,         1,          0,           0,        -1 },
+	{ "zoom",        NULL,   "Zoom Cloud Meetings", 0,         1,          0,           0,        -1 },
+	{ "zoom",        NULL,          "Settings",     0,         1,          0,           0,        -1 },
 };
 
 /* layout(s) */
