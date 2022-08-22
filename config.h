@@ -48,7 +48,7 @@ static const Rule rules[] = {
 	{ "St",          NULL,          NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,          NULL,          "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 	{ "Godot",       NULL,          NULL,           1 << 2,    0,          0,           0,         0 },
-	{ "Thunderbird", NULL,          NULL,           1 << 2,    0,          0,           0,        -1 },
+	{ "thunderbird", NULL,          NULL,           1 << 2,    0,          0,           0,         1 },
 	{ NULL,          "libreoffice", NULL,           1 << 2,    0,          0,           0,        -1 },
 	{ NULL,          NULL,          "LibreOffice",  1 << 2,    0,          0,           0,        -1 },
 	{ NULL,          "sun-awt-X11-XFramePeer",NULL, 1 << 2,    0,          0,           0,        -1 },
@@ -58,6 +58,9 @@ static const Rule rules[] = {
   { "discord",     NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
   { "Steam",       NULL,          NULL,           1 << 5,    0,          0,           0,         0 },
   { NULL,          NULL,          "rofi-beats",   1 << 3,    0,          0,           0,         1 },
+  { "Slack",       NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
+	{ "zoom",        NULL,          "Zoom Meeting", 1 << 4,    0,          0,           0,         0 },
+	{ "zoom",        NULL,   "Zoom - Free Account", 1 << 4,    0,          0,           0,         0 },
   { NULL,          NULL,          "cmus",         1 << 3,    0,          0,           0,         1 },
   { NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
   { NULL,          NULL,          "sncli",        1 << 2,    0,          0,           0,         1 },
@@ -75,8 +78,8 @@ static const Rule rules[] = {
 	{ "Steam",   NULL,              "Friends List", 0,         1,          0,           0,        -1 },
 	{ NULL,   NULL,          "XAMPP Control Panel", 0,         1,          0,           0,        -1 },
 	{ "Gitk",        NULL,          NULL,           0,         1,          0,           0,        -1 },
-	{ "zoom",        NULL,   "Zoom Cloud Meetings", 0,         1,          0,           0,        -1 },
-	{ "zoom",        NULL,          "Settings",     0,         1,          0,           0,        -1 },
+	{ "zoom",        NULL,   "Zoom Cloud Meetings", 1 << 4,    1,          0,           0,         0 },
+	{ "zoom",        NULL,          "Settings",     1 << 4,    1,          0,           0,         0 },
 };
 
 /* layout(s) */
