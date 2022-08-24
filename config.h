@@ -38,21 +38,24 @@ static const char *colors[][3]      = {
 /* tagging */
 static const char *tags[] = { "web", "dev", "doc", "play", "chat", "fun" };
 
+static const char win_qemu[] = "QEMU/KVM - Connection Details";
+static const char win_xampp[] = "XAMPP Control Panel";
+static const char win_x11_xframe[] = "sun-awt-X11-XFramePeer";
+static const char win_mysql_wb[] = "MySQL Workbench";
+
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance           title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Firefox",     NULL,          NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "St",          NULL,          NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,          NULL,          "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	{ "qutebrowser", NULL,          NULL,           1 << 0,    0,          0,           0,        -1 },
 	{ "Godot",       NULL,          NULL,           1 << 2,    0,          0,           0,         0 },
 	{ "thunderbird", NULL,          NULL,           1 << 2,    0,          0,           0,         1 },
+	{ NULL,          NULL,          win_mysql_wb,   1 << 2,    0,          0,           0,        -1 },
 	{ NULL,          "libreoffice", NULL,           1 << 2,    0,          0,           0,        -1 },
 	{ NULL,          NULL,          "LibreOffice",  1 << 2,    0,          0,           0,        -1 },
-	{ NULL,          "sun-awt-X11-XFramePeer",NULL, 1 << 2,    0,          0,           0,        -1 },
-	{ "qutebrowser", NULL,          NULL,           1 << 0,    0,          0,           0,        -1 },
+	{ NULL,          win_x11_xframe,NULL,           1 << 2,    0,          0,           0,        -1 },
   { "VSCodium",    "vscodium",    NULL,           1 << 1,    0,          0,           0,         0 },
   { NULL,          NULL,          "WhatsApp",     1 << 4,    0,          0,           0,         1 },
   { "discord",     NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
@@ -70,13 +73,16 @@ static const Rule rules[] = {
 	{ "Pavucontrol", NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ "Gcolor3",     NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ NULL,          NULL,          "Pick",         0,         1,          0,           0,        -1 },
-	{ NULL, NULL, "QEMU/KVM - Connection Details",  0,         1,          0,           0,        -1 },
+	{ NULL,          NULL,          win_qemu,       0,         1,          0,           0,        -1 },
 	{ "fontforge",   NULL,          "Open Font",    0,         1,          0,           0,        -1 },
 	{ "fontforge",   NULL,          "Warnings",     0,         1,          0,           0,        -1 },
-	{ "Steam",   NULL,              "Friends List", 0,         1,          0,           0,        -1 },
-	{ NULL,   NULL,          "XAMPP Control Panel", 0,         1,          0,           0,        -1 },
+	{ "Steam",       NULL,          "Friends List", 0,         1,          0,           0,        -1 },
+	{ NULL,          NULL,          win_xampp,      0,         1,          0,           0,        -1 },
 	{ "Gitk",        NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ "zoom",        NULL,          NULL,           1 << 4,    1,          0,           0,         0 },
+
+  // Swallow windows
+	{ NULL,          NULL,          "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
