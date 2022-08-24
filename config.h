@@ -59,8 +59,6 @@ static const Rule rules[] = {
   { "Steam",       NULL,          NULL,           1 << 5,    0,          0,           0,         0 },
   { NULL,          NULL,          "rofi-beats",   1 << 3,    0,          0,           0,         1 },
   { "Slack",       NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
-	{ "zoom",        NULL,          "Zoom Meeting", 1 << 4,    0,          0,           0,         0 },
-	{ "zoom",        NULL,   "Zoom - Free Account", 1 << 4,    0,          0,           0,         0 },
   { NULL,          NULL,          "cmus",         1 << 3,    0,          0,           0,         1 },
   { NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
   { NULL,          NULL,          "sncli",        1 << 2,    0,          0,           0,         1 },
@@ -78,8 +76,7 @@ static const Rule rules[] = {
 	{ "Steam",   NULL,              "Friends List", 0,         1,          0,           0,        -1 },
 	{ NULL,   NULL,          "XAMPP Control Panel", 0,         1,          0,           0,        -1 },
 	{ "Gitk",        NULL,          NULL,           0,         1,          0,           0,        -1 },
-	{ "zoom",        NULL,   "Zoom Cloud Meetings", 1 << 4,    1,          0,           0,         0 },
-	{ "zoom",        NULL,          "Settings",     1 << 4,    1,          0,           0,         0 },
+	{ "zoom",        NULL,          NULL,           1 << 4,    1,          0,           0,         0 },
 };
 
 /* layout(s) */
