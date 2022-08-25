@@ -42,6 +42,7 @@ static const char win_qemu[] = "QEMU/KVM - Connection Details";
 static const char win_xampp[] = "XAMPP Control Panel";
 static const char win_x11_xframe[] = "sun-awt-X11-XFramePeer";
 static const char win_mysql_wb[] = "MySQL Workbench";
+static const char sscreenrec[] = "simplescreenrecorder";
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -66,6 +67,7 @@ static const Rule rules[] = {
   { NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
   { NULL,          NULL,          "sncli",        1 << 2,    0,          0,           0,         1 },
   { NULL,          NULL,          "launch-nvim",  1 << 5,    0,          0,           0,         1 },
+	{ NULL,          sscreenrec,    NULL,           1 << 3,    0,          0,           0,         0 },
 
   // Floating windows
 	/* class     instance           title           tags mask  isfloating  isterminal  noswallow  monitor */
