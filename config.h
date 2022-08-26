@@ -36,7 +36,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "web", "dev", "doc", "play", "chat", "fun" };
+static const char *tags[] = { "web", "dev", "doc", "play", "chat", "call", "fun", "back" };
 
 static const char win_qemu[] = "QEMU/KVM - Connection Details";
 static const char win_xampp[] = "XAMPP Control Panel";
@@ -44,34 +44,52 @@ static const char win_x11_xframe[] = "sun-awt-X11-XFramePeer";
 static const char win_mysql_wb[] = "MySQL Workbench";
 static const char sscreenrec[] = "simplescreenrecorder";
 
+static const int web =  1 << 0;
+static const int dev =  2 << 0;
+static const int doc =  3 << 0;
+static const int play = 4 << 0;
+static const int chat = 5 << 0;
+static const int call = 6 << 0;
+static const int fun =  7 << 0;
+static const int back = 8 << 0;
+
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance           title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "qutebrowser", NULL,          NULL,           1 << 0,    0,          0,           0,        -1 },
-	{ "Godot",       NULL,          NULL,           1 << 2,    0,          0,           0,         0 },
-	{ "thunderbird", NULL,          NULL,           1 << 2,    0,          0,           0,         1 },
-	{ NULL,          NULL,          win_mysql_wb,   1 << 2,    0,          0,           0,        -1 },
-	{ NULL,          "libreoffice", NULL,           1 << 2,    0,          0,           0,        -1 },
-	{ NULL,          NULL,          "LibreOffice",  1 << 2,    0,          0,           0,        -1 },
-	{ NULL,          win_x11_xframe,NULL,           1 << 2,    0,          0,           0,        -1 },
-  { "VSCodium",    "vscodium",    NULL,           1 << 1,    0,          0,           0,         0 },
-  { NULL,          NULL,          "WhatsApp",     1 << 4,    0,          0,           0,         1 },
-  { "discord",     NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
-  { "Steam",       NULL,          NULL,           1 << 5,    0,          0,           0,         0 },
-  { NULL,          NULL,          "rofi-beats",   1 << 3,    0,          0,           0,         1 },
-  { "Slack",       NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
-  { NULL,          NULL,          "cmus",         1 << 3,    0,          0,           0,         1 },
-  { NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
-  { NULL,          NULL,          "sncli",        1 << 2,    0,          0,           0,         1 },
-  { NULL,          NULL,          "launch-nvim",  1 << 5,    0,          0,           0,         1 },
-	{ NULL,          sscreenrec,    NULL,           1 << 3,    0,          0,           0,         0 },
+  // Non floating windows
+  // Monitor -1
+	{ "qutebrowser", NULL,          NULL,           web,     0,          0,           0,        -1 },
+	{ NULL,          "libreoffice", NULL,           doc,     0,          0,           0,        -1 },
+	{ NULL,          NULL,          "LibreOffice",  doc,     0,          0,           0,        -1 },
+	{ NULL,          win_x11_xframe,NULL,           doc,     0,          0,           0,        -1 },
+  // Monitor 0
+  { "VSCodium",    "vscodium",    NULL,           dev,     0,          0,           0,         0 },
+	{ "Godot",       NULL,          NULL,           dev,     0,          0,           0,         0 },
+  { "Steam",       NULL,          NULL,           fun,     0,          0,           0,         0 },
+  // Monitor 1
+  { NULL,          NULL,          "sncli",        doc,     0,          0,           0,         1 },
+	{ "thunderbird", NULL,          NULL,           doc,     0,          0,           0,         1 },
+  { NULL,          NULL,          "cmus",         play,    0,          0,           0,         1 },
+  { NULL,          NULL,          "ncspot",       play,    0,          0,           0,         1 },
+  { NULL,          NULL,          "rofi-beats",   play,    0,          0,           0,         1 },
+  { NULL,          NULL,          "WhatsApp",     chat,    0,          0,           0,         1 },
+  { "Slack",       NULL,          NULL,           chat,    0,          0,           0,         1 },
+  { "discord",     NULL,          NULL,           call,    0,          0,           0,         1 },
+	{ "zoom",        NULL,          NULL,           call,    0,          0,           0,         1 },
+  { "Trello",       NULL,          NULL,          fun,     0,          0,           0,         1 },
+	{ NULL,          sscreenrec,    NULL,           back,    0,          0,           0,         1 },
 
   // Floating windows
+	/* xprop(1):
+	 *	WM_CLASS(STRING) = instance, class
+	 *	WM_NAME(STRING) = title
+	 */
 	/* class     instance           title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",        NULL,          NULL,           0,         1,          0,           0,        -1 },
+  // Monitor -1
+	{ "Gimp",        NULL,          NULL,           doc,       1,          0,           0,        -1 },
 	{ "Pavucontrol", NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ "Gcolor3",     NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ NULL,          NULL,          "Pick",         0,         1,          0,           0,        -1 },
@@ -81,7 +99,7 @@ static const Rule rules[] = {
 	{ "Steam",       NULL,          "Friends List", 0,         1,          0,           0,        -1 },
 	{ NULL,          NULL,          win_xampp,      0,         1,          0,           0,        -1 },
 	{ "Gitk",        NULL,          NULL,           0,         1,          0,           0,        -1 },
-	{ "zoom",        NULL,          NULL,           1 << 4,    1,          0,           0,         0 },
+  // Monitor 0
 
   // Swallow windows
 	{ NULL,          NULL,          "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
