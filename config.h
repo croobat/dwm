@@ -45,13 +45,13 @@ static const char win_mysql_wb[] = "MySQL Workbench";
 static const char sscreenrec[] = "simplescreenrecorder";
 
 static const int web =  1 << 0;
-static const int dev =  2 << 0;
-static const int doc =  3 << 0;
-static const int play = 4 << 0;
-static const int chat = 5 << 0;
-static const int call = 6 << 0;
-static const int fun =  7 << 0;
-static const int back = 8 << 0;
+static const int dev =  1 << 1;
+static const int doc =  1 << 2;
+static const int play = 1 << 3;
+static const int chat = 1 << 4;
+static const int call = 1 << 5;
+static const int fun =  1 << 6;
+static const int back = 1 << 7;
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -79,7 +79,7 @@ static const Rule rules[] = {
   { "Slack",       NULL,          NULL,           chat,    0,          0,           0,         1 },
   { "discord",     NULL,          NULL,           call,    0,          0,           0,         1 },
 	{ "zoom",        NULL,          NULL,           call,    0,          0,           0,         1 },
-  { "Trello",       NULL,          NULL,          fun,     0,          0,           0,         1 },
+  { "Trello",      NULL,          NULL,           fun,     0,          0,           0,         1 },
 	{ NULL,          sscreenrec,    NULL,           back,    0,          0,           0,         1 },
 
   // Floating windows
