@@ -36,7 +36,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "web", "dev", "doc", "play", "chat", "call", "fun", "back" };
+static const char *tags[] = { "web", "dev", "doc", "play", "call", "chat", "fun", "back" };
 
 static const char win_qemu[] = "QEMU/KVM - Connection Details";
 static const char win_xampp[] = "XAMPP Control Panel";
@@ -48,8 +48,8 @@ static const int web =  1 << 0;
 static const int dev =  1 << 1;
 static const int doc =  1 << 2;
 static const int play = 1 << 3;
-static const int chat = 1 << 4;
-static const int call = 1 << 5;
+static const int call = 1 << 4;
+static const int chat = 1 << 5;
 static const int fun =  1 << 6;
 static const int back = 1 << 7;
 
@@ -134,7 +134,12 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_white, "-sb", col_light_gray, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "--config-file", "/home/tony/.config/dwm/patches/scratchpad.yml", "-e", "tmux", NULL };
+static const char *scratchpadcmd[] = { "alacritty",
+  "-t", scratchpadname,
+  "--config-file", "/home/tony/.config/dwm/patches/scratchpad.yml", 
+  "-e", "tmux",
+  NULL
+};
 
 /* Patches */
 #include "patches/shiftview.c" // Tag rotation
