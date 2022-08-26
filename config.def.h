@@ -50,27 +50,35 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance           title           tags mask  isfloating  isterminal  noswallow  monitor */
+  // Non floating windows
+  // Monitor -1
 	{ "qutebrowser", NULL,          NULL,           1 << 0,    0,          0,           0,        -1 },
-	{ "Godot",       NULL,          NULL,           1 << 2,    0,          0,           0,         0 },
-	{ "thunderbird", NULL,          NULL,           1 << 2,    0,          0,           0,         1 },
-	{ NULL,          NULL,          win_mysql_wb,   1 << 2,    0,          0,           0,        -1 },
 	{ NULL,          "libreoffice", NULL,           1 << 2,    0,          0,           0,        -1 },
 	{ NULL,          NULL,          "LibreOffice",  1 << 2,    0,          0,           0,        -1 },
 	{ NULL,          win_x11_xframe,NULL,           1 << 2,    0,          0,           0,        -1 },
+  // Monitor 0
   { "VSCodium",    "vscodium",    NULL,           1 << 1,    0,          0,           0,         0 },
-  { NULL,          NULL,          "WhatsApp",     1 << 4,    0,          0,           0,         1 },
-  { "discord",     NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
+	{ "Godot",       NULL,          NULL,           1 << 2,    0,          0,           0,         0 },
+	{ NULL,          sscreenrec,    NULL,           1 << 3,    0,          0,           0,         0 },
   { "Steam",       NULL,          NULL,           1 << 5,    0,          0,           0,         0 },
-  { NULL,          NULL,          "rofi-beats",   1 << 3,    0,          0,           0,         1 },
-  { "Slack",       NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
+  // Monitor 1
+	{ "thunderbird", NULL,          NULL,           1 << 2,    0,          0,           0,         1 },
+  { NULL,          NULL,          "sncli",        1 << 2,    0,          0,           0,         1 },
   { NULL,          NULL,          "cmus",         1 << 3,    0,          0,           0,         1 },
   { NULL,          NULL,          "ncspot",       1 << 3,    0,          0,           0,         1 },
-  { NULL,          NULL,          "sncli",        1 << 2,    0,          0,           0,         1 },
+  { NULL,          NULL,          "rofi-beats",   1 << 3,    0,          0,           0,         1 },
+  { NULL,          NULL,          "WhatsApp",     1 << 4,    0,          0,           0,         1 },
+  { "discord",     NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
+  { "Slack",       NULL,          NULL,           1 << 4,    0,          0,           0,         1 },
   { NULL,          NULL,          "launch-nvim",  1 << 5,    0,          0,           0,         1 },
-	{ NULL,          sscreenrec,    NULL,           1 << 3,    0,          0,           0,         0 },
 
   // Floating windows
+	/* xprop(1):
+	 *	WM_CLASS(STRING) = instance, class
+	 *	WM_NAME(STRING) = title
+	 */
 	/* class     instance           title           tags mask  isfloating  isterminal  noswallow  monitor */
+  // Monitor -1
 	{ "Gimp",        NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ "Pavucontrol", NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ "Gcolor3",     NULL,          NULL,           0,         1,          0,           0,        -1 },
@@ -81,6 +89,7 @@ static const Rule rules[] = {
 	{ "Steam",       NULL,          "Friends List", 0,         1,          0,           0,        -1 },
 	{ NULL,          NULL,          win_xampp,      0,         1,          0,           0,        -1 },
 	{ "Gitk",        NULL,          NULL,           0,         1,          0,           0,        -1 },
+  // Monitor 0
 	{ "zoom",        NULL,          NULL,           1 << 4,    1,          0,           0,         0 },
 
   // Swallow windows
