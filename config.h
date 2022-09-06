@@ -15,9 +15,9 @@ static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 //static const char *fonts[]          = { "JetBrains Mono Nerd Font Medium:size=10" };
-static const char *fonts[]          = { "JetBrainsMonoMedium Nerd Font Mono:size=10" };
+static const char *fonts[]          = { "JetBrains Mono SemiBold:size=10" };
 //static const char dmenufont[]       = "JetBrains Mono Nerd Font Medium:size=10";
-static const char dmenufont[]       = "JetBrainsMonoMedium Nerd Font Mono:size=10";
+static const char dmenufont[]       = "JetBrains Mono SemiBold:size=10";
 static const char col_black[]               = "#282a36";
 static const char col_white[]               = "#f8f8f2";
 static const char col_light_gray[]          = "#44475a";
@@ -65,6 +65,7 @@ static const Rule rules[] = {
 	{ NULL,          "libreoffice", NULL,           doc,     0,          0,           0,        -1 },
 	{ NULL,          NULL,          "LibreOffice",  doc,     0,          0,           0,        -1 },
 	{ NULL,          win_x11_xframe,NULL,           doc,     0,          0,           0,        -1 },
+	{ "calibre",     NULL,          NULL,           doc,     0,          0,           0,        -1 },
   // Monitor 0
   { "VSCodium",    "vscodium",    NULL,           dev,     0,          0,           0,         0 },
 	{ "Godot",       NULL,          NULL,           dev,     0,          0,           0,         0 },
@@ -99,10 +100,12 @@ static const Rule rules[] = {
 	{ "Steam",       NULL,          "Friends List", 0,         1,          0,           0,        -1 },
 	{ NULL,          NULL,          win_xampp,      0,         1,          0,           0,        -1 },
 	{ "Gitk",        NULL,          NULL,           0,         1,          0,           0,        -1 },
+	{ NULL,          NULL,          "peek",         0,         1,          0,           0,        -1 },
   // Monitor 0
 
   // Swallow windows
 	{ NULL,          NULL,          "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	{ NULL,          NULL,          "balenaEtcher", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
