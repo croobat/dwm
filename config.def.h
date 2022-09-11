@@ -14,10 +14,8 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-//static const char *fonts[]          = { "JetBrains Mono Nerd Font Medium:size=10" };
-static const char *fonts[]          = { "JetBrains Mono SemiBold:size=10" };
-//static const char dmenufont[]       = "JetBrains Mono Nerd Font Medium:size=10";
-static const char dmenufont[]       = "JetBrains Mono SemiBold:size=10";
+static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=9:style=Bold" };
+static const char dmenufont[]       = { "JetBrains Mono Nerd Font:size=9:style=Bold" };
 static const char col_black[]               = "#282a36";
 static const char col_white[]               = "#f8f8f2";
 static const char col_light_gray[]          = "#44475a";
