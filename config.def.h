@@ -98,7 +98,7 @@ static const Rule rules[] = {
 	{ "Steam",       NULL,          "Friends List", 0,         1,          0,           0,        -1 },
 	{ NULL,          NULL,          win_xampp,      0,         1,          0,           0,        -1 },
 	{ "Gitk",        NULL,          NULL,           0,         1,          0,           0,        -1 },
-	{ NULL,          NULL,          "peek",         0,         1,          0,           0,        -1 },
+	{ NULL,          "peek",        NULL,           0,         1,          0,           0,        -1 },
   // Monitor 0
 
   // Swallow windows
