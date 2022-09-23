@@ -65,8 +65,8 @@ static const Rule rules[] = {
 	{ NULL,          win_x11_xframe,NULL,           doc,     0,          0,           0,        -1 },
 	{ "calibre",     NULL,          NULL,           doc,     0,          0,           0,        -1 },
   // Monitor 0
-  { "VSCodium",    "vscodium",    NULL,           dev,     0,          0,           0,         0 },
-	{ "Godot",       NULL,          NULL,           dev,     0,          0,           0,         0 },
+  { "VSCodium",    "vscodium",    NULL,           doc,     0,          0,           0,         0 },
+	{ "Godot",       NULL,          NULL,           doc,     0,          0,           0,         0 },
   { "Steam",       NULL,          NULL,           fun,     0,          0,           0,         0 },
   // Monitor 1
   { NULL,          NULL,          "sncli",        doc,     0,          0,           0,         1 },
@@ -148,7 +148,7 @@ static const char *scratchpadcmd[] = { "alacritty",
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                      XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_space,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
