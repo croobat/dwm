@@ -2,8 +2,8 @@
 
 /* appearance */
 
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 4;        /* gaps between windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int gappx     = 2;        /* gaps between windows */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -64,6 +64,7 @@ static const Rule rules[] = {
 	{ NULL,          NULL,          "LibreOffice",  doc,     0,          0,           0,        -1 },
 	{ NULL,          win_x11_xframe,NULL,           doc,     0,          0,           0,        -1 },
 	{ "calibre",     NULL,          NULL,           doc,     0,          0,           0,        -1 },
+	{ "qBittorrent", NULL,          NULL,           back,    0,          0,           0,        -1 },
   // Monitor 0
   { "VSCodium",    "vscodium",    NULL,           doc,     0,          0,           0,         0 },
 	{ "Godot",       NULL,          NULL,           doc,     0,          0,           0,         0 },
