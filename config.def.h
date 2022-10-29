@@ -34,22 +34,26 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "web", "dev", "doc", "play", "call", "chat", "fun", "back" };
+static const char *tags[] = { "Dev", "Web", "Brow", "Doc", "App", "Play", "Talk", "Chat", "Fun", "Back" };
+
+static const int dev  = 1 << 0;
+static const int web  = 1 << 1;
+static const int brow = 1 << 2;
+static const int doc  = 1 << 3;
+static const int app  = 1 << 4;
+static const int play = 1 << 5;
+static const int call = 1 << 6;
+static const int chat = 1 << 7;
+static const int fun  = 1 << 8;
+static const int back = 1 << 9;
 
 static const char win_qemu[] = "QEMU/KVM - Connection Details";
 static const char win_xampp[] = "XAMPP Control Panel";
 static const char win_x11_xframe[] = "sun-awt-X11-XFramePeer";
 static const char win_mysql_wb[] = "MySQL Workbench";
 static const char sscreenrec[] = "simplescreenrecorder";
-
-static const int web =  1 << 0;
-static const int dev =  1 << 1;
-static const int doc =  1 << 2;
-static const int play = 1 << 3;
-static const int call = 1 << 4;
-static const int chat = 1 << 5;
-static const int fun =  1 << 6;
-static const int back = 1 << 7;
+static const char steam_payp[] = "Log in to your PayPal account";
+static const char firefox_dev[] = "firefoxdeveloperedition";
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -60,6 +64,7 @@ static const Rule rules[] = {
   // Non floating windows
   // Monitor -1
 	{ "qutebrowser", NULL,          NULL,           web,     0,          0,           0,        -1 },
+	{ firefox_dev,   NULL,          NULL,           brow,    0,          0,           0,        -1 },
 	{ NULL,          "libreoffice", NULL,           doc,     0,          0,           0,        -1 },
 	{ NULL,          NULL,          "LibreOffice",  doc,     0,          0,           0,        -1 },
 	{ NULL,          win_x11_xframe,NULL,           doc,     0,          0,           0,        -1 },
@@ -81,6 +86,7 @@ static const Rule rules[] = {
 	{ "zoom",        NULL,          NULL,           call,    0,          0,           0,         1 },
   { "Trello",      NULL,          NULL,           fun,     0,          0,           0,         1 },
 	{ NULL,          sscreenrec,    NULL,           back,    0,          0,           0,         1 },
+	{ NULL,          NULL,          "*DEBUG*",      doc,     0,          0,           0,         1 },
 
   // Floating windows
 	/* xprop(1):
@@ -100,6 +106,7 @@ static const Rule rules[] = {
 	{ NULL,          NULL,          win_xampp,      0,         1,          0,           0,        -1 },
 	{ "Gitk",        NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ NULL,          "peek",        NULL,           0,         1,          0,           0,        -1 },
+	{ NULL,          NULL,          steam_payp,     0,         1,          0,           0,        -1 },
   // Monitor 0
 
   // Swallow windows
@@ -138,7 +145,7 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "alacritty",
   "-t", scratchpadname,
-  "--config-file", "/home/tony/.config/dwm/patches/scratchpad.yml", 
+  "--config-file", "/home/tony/.config/dwm/patches/scratchpad.yml",
   "-e", "tmux",
   NULL
 };
@@ -184,11 +191,12 @@ static Key keys[] = {
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_7,                      4)
-	TAGKEYS(                        XK_8,                      5)
-	TAGKEYS(                        XK_9,                      6)
-	TAGKEYS(                        XK_0,                      7)
-	// TAGKEYS(                        XK_9,                      8)
+	TAGKEYS(                        XK_5,                      4)
+	TAGKEYS(                        XK_6,                      5)
+	TAGKEYS(                        XK_7,                      6)
+	TAGKEYS(                        XK_8,                      7)
+	TAGKEYS(                        XK_9,                      8)
+	TAGKEYS(                        XK_0,                      9)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
