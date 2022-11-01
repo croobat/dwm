@@ -34,10 +34,10 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "Dev", "Web", "Brow", "Doc", "App", "Play", "Talk", "Chat", "Fun", "Back" };
+static const char *tags[] = { "Web", "Dev", "Brow", "Doc", "App", "Play", "Talk", "Chat", "Fun", "Back" };
 
-static const int dev  = 1 << 0;
-static const int web  = 1 << 1;
+static const int web  = 1 << 0;
+static const int dev  = 1 << 1;
 static const int brow = 1 << 2;
 static const int doc  = 1 << 3;
 static const int app  = 1 << 4;
@@ -54,6 +54,7 @@ static const char win_mysql_wb[] = "MySQL Workbench";
 static const char sscreenrec[] = "simplescreenrecorder";
 static const char steam_payp[] = "Log in to your PayPal account";
 static const char firefox_dev[] = "firefoxdeveloperedition";
+static const char chrome_dev[] = "Google-chrome-unstable";
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -65,6 +66,7 @@ static const Rule rules[] = {
   // Monitor -1
 	{ "qutebrowser", NULL,          NULL,           web,     0,          0,           0,        -1 },
 	{ firefox_dev,   NULL,          NULL,           brow,    0,          0,           0,        -1 },
+	{ chrome_dev,    NULL,          NULL,           brow,    0,          0,           0,        -1 },
 	{ NULL,          "libreoffice", NULL,           doc,     0,          0,           0,        -1 },
 	{ NULL,          NULL,          "LibreOffice",  doc,     0,          0,           0,        -1 },
 	{ NULL,          win_x11_xframe,NULL,           doc,     0,          0,           0,        -1 },

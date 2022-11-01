@@ -34,10 +34,10 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "Dev", "Web", "Brow", "Doc", "App", "Play", "Talk", "Chat", "Fun", "Back" };
+static const char *tags[] = { "Web", "Dev", "Brow", "Doc", "App", "Play", "Talk", "Chat", "Fun", "Back" };
 
-static const int dev  = 1 << 0;
-static const int web  = 1 << 1;
+static const int web  = 1 << 0;
+static const int dev  = 1 << 1;
 static const int brow = 1 << 2;
 static const int doc  = 1 << 3;
 static const int app  = 1 << 4;
