@@ -54,47 +54,49 @@ static const char win_mysql_wb[] = "MySQL Workbench";
 static const char sscreenrec[] = "simplescreenrecorder";
 static const char steam_payp[] = "Log in to your PayPal account";
 static const char firefox_dev[] = "firefoxdeveloperedition";
+static const char chrome_dev[] = "Google-chrome-unstable";
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance           title           tags mask  isfloating  isterminal  noswallow  monitor */
-  // Non floating windows
-  // Monitor -1
+	/* class     instance           title         tags mask  isfloating  isterminal  noswallow  monitor */
+	// Non floating windows
+	// Monitor -1
 	{ "qutebrowser", NULL,          NULL,           web,     0,          0,           0,        -1 },
 	{ firefox_dev,   NULL,          NULL,           brow,    0,          0,           0,        -1 },
+	{ chrome_dev,    NULL,          NULL,           brow,    0,          0,           0,        -1 },
 	{ NULL,          "libreoffice", NULL,           doc,     0,          0,           0,        -1 },
 	{ NULL,          NULL,          "LibreOffice",  doc,     0,          0,           0,        -1 },
 	{ NULL,          win_x11_xframe,NULL,           doc,     0,          0,           0,        -1 },
 	{ "calibre",     NULL,          NULL,           doc,     0,          0,           0,        -1 },
 	{ "qBittorrent", NULL,          NULL,           back,    0,          0,           0,        -1 },
-  // Monitor 0
-  { "VSCodium",    "vscodium",    NULL,           doc,     0,          0,           0,         0 },
+	// Monitor 0
+	{ "VSCodium",    "vscodium",    NULL,           doc,     0,          0,           0,         0 },
 	{ "Godot",       NULL,          NULL,           doc,     0,          0,           0,         0 },
-  { "Steam",       NULL,          NULL,           fun,     0,          0,           0,         0 },
-  // Monitor 1
-  { NULL,          NULL,          "sncli",        doc,     0,          0,           0,         1 },
+	{ "Steam",       NULL,          NULL,           fun,     0,          0,           0,         0 },
+	// Monitor 1
+	{ NULL,          NULL,          "sncli",        doc,     0,          0,           0,         1 },
 	{ "thunderbird", NULL,          NULL,           doc,     0,          0,           0,         1 },
-  { NULL,          NULL,          "cmus",         play,    0,          0,           0,         1 },
-  { NULL,          NULL,          "ncspot",       play,    0,          0,           0,         1 },
-  { NULL,          NULL,          "rofi-beats",   play,    0,          0,           0,         1 },
-  { NULL,          NULL,          "WhatsApp",     chat,    0,          0,           0,         1 },
-  { "Slack",       NULL,          NULL,           chat,    0,          0,           0,         1 },
-  { "discord",     NULL,          NULL,           call,    0,          0,           0,         1 },
+	{ NULL,          NULL,          "cmus",         play,    0,          0,           0,         1 },
+	{ NULL,          NULL,          "ncspot",       play,    0,          0,           0,         1 },
+	{ NULL,          NULL,          "rofi-beats",   play,    0,          0,           0,         1 },
+	{ NULL,          NULL,          "WhatsApp",     chat,    0,          0,           0,         1 },
+	{ "Slack",       NULL,          NULL,           chat,    0,          0,           0,         1 },
+	{ "discord",     NULL,          NULL,           call,    0,          0,           0,         1 },
 	{ "zoom",        NULL,          NULL,           call,    0,          0,           0,         1 },
-  { "Trello",      NULL,          NULL,           fun,     0,          0,           0,         1 },
+	{ "Trello",      NULL,          NULL,           fun,     0,          0,           0,         1 },
 	{ NULL,          sscreenrec,    NULL,           back,    0,          0,           0,         1 },
 	{ NULL,          NULL,          "*DEBUG*",      doc,     0,          0,           0,         1 },
 
-  // Floating windows
+	// Floating windows
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance           title           tags mask  isfloating  isterminal  noswallow  monitor */
-  // Monitor -1
+	// Monitor -1
 	{ "Gimp",        NULL,          NULL,           doc,       1,          0,           0,        -1 },
 	{ "Pavucontrol", NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ "Gcolor3",     NULL,          NULL,           0,         1,          0,           0,        -1 },
@@ -107,11 +109,11 @@ static const Rule rules[] = {
 	{ "Gitk",        NULL,          NULL,           0,         1,          0,           0,        -1 },
 	{ NULL,          "peek",        NULL,           0,         1,          0,           0,        -1 },
 	{ NULL,          NULL,          steam_payp,     0,         1,          0,           0,        -1 },
-  // Monitor 0
+	// Monitor 0
 
-  // Swallow windows
+	// Swallow windows
+	{ "Alacritty",   NULL,          NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,          NULL,          "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
-	{ NULL,          NULL,          "balenaEtcher", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -144,9 +146,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-nb", col_black,
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "alacritty",
-  "-t", scratchpadname,
-  "--config-file", "/home/tony/.config/dwm/patches/scratchpad.yml",
-  "-e", "tmux",
+	"-t", scratchpadname,
+	"--config-file", "/home/tony/.config/dwm/patches/scratchpad.yml",
+	"-e", "tmux",
   NULL
 };
 
