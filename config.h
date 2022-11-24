@@ -36,13 +36,13 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "Web", "Dev", "Brow", "Doc", "App", "Play", "Talk", "Chat", "Fun", "Back" };
+static const char *tags[] = { "Web", "Dev", "Brow", "App", "Doc", "Play", "Talk", "Chat", "Fun", "Back" };
 
 static const int web  = 1 << 0;
 static const int dev  = 1 << 1;
 static const int brow = 1 << 2;
-static const int doc  = 1 << 3;
-static const int app  = 1 << 4;
+static const int app  = 1 << 3;
+static const int doc  = 1 << 4;
 static const int play = 1 << 5;
 static const int call = 1 << 6;
 static const int chat = 1 << 7;
@@ -93,6 +93,7 @@ static const Rule rules[] = {
     { NULL,          sscreenrec,    NULL,           back,    0,    0,    0,    -1 },
     { "qBittorrent", NULL,          NULL,           back,    0,    0,    0,    -1 },
 
+	// Floating windows
     /* class        instance        title           mask   float term  swallow monitor */
     { "Gimp",        NULL,          NULL,           doc,     1,    0,    0,    -1 },
     { "Pavucontrol", NULL,          NULL,           0,       1,    0,    0,    -1 },
