@@ -158,6 +158,7 @@ static const char *scratchpadcmd[] = { "alacritty",
 static Key keys[] = {
     /* modifier                     key        function        argument */
     { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+    // { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_backslash,togglescratch,{.v = scratchpadcmd } },
     { MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
     { MODKEY,                       XK_space,  togglescratch,  {.v =  scratchpadcmd } },
