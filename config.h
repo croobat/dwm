@@ -80,6 +80,7 @@ static const Rule rules[] = {
     { NULL,          NULL,          "Google Docs",  doc,     0,    0,    0,    -1 },
     { "thunderbird", NULL,          NULL,           doc,     0,    0,    0,    -1 },
     { NULL,          foliate,       NULL,           app,     0,    0,    0,    -1 },
+    { "Gimp",        NULL,          NULL,           app,     0,    0,    0,    -1 },
     { NULL,          NULL,          "cmus",         play,    0,    0,    0,    -1 },
     { NULL,          NULL,          "ncspot",       play,    0,    0,    0,    -1 },
     { NULL,          NULL,          "rofi-beats",   play,    0,    0,    0,    -1 },
@@ -95,7 +96,6 @@ static const Rule rules[] = {
 
     // Floating windows
     /* class        instance        title           mask   float term  swallow monitor */
-    { "Gimp",        NULL,          NULL,           doc,     1,    0,    0,    -1 },
     { "Pavucontrol", NULL,          NULL,           0,       1,    0,    0,    -1 },
     { "Gcolor3",     NULL,          NULL,           0,       1,    0,    0,    -1 },
     { NULL,          NULL,          "Pick",         0,       1,    0,    0,    -1 },
