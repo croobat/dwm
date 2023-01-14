@@ -81,6 +81,7 @@ static const Rule rules[] = {
     { "thunderbird", NULL,          NULL,           doc,     0,    0,    0,    -1 },
     { NULL,          foliate,       NULL,           app,     0,    0,    0,    -1 },
     { "Gimp",        NULL,          NULL,           app,     0,    0,    0,    -1 },
+    { NULL,          NULL,          "Tachidesk",    app,     0,    0,    0,    -1 },
     { NULL,          NULL,          "cmus",         play,    0,    0,    0,    -1 },
     { NULL,          NULL,          "ncspot",       play,    0,    0,    0,    -1 },
     { NULL,          NULL,          "rofi-beats",   play,    0,    0,    0,    -1 },
