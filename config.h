@@ -15,8 +15,8 @@ static const int showbar                  = 1;    /* 0 means no bar */
 static const int topbar                   = 1;    /* 0 means bottom bar */
 static const Bool viewontag            = True;    /* Switch view on tag switch */
 
-static const char *fonts[]          = { "Recursive Mono Linear Static:size=8:style=Medium" };
-static const char dmenufont[]       = { "Recursive Mono Linear Static:size=8:style=Medium" };
+static const char *fonts[]          = { "Recursive Mono Linear Static:size=7:style=Medium" };
+static const char dmenufont[]       = { "Recursive Mono Linear Static:size=7:style=Medium" };
 static const char col_black[]       = "#282a36";
 static const char col_white[]       = "#f8f8f2";
 static const char col_light_gray[]  = "#44475a";

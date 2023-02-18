@@ -3,8 +3,8 @@ import:
 
 window:
   dimensions:
-    columns: 180
-    lines: 50
+    columns: 200
+    lines: 55
 
 scrolling:
   history: 2000
