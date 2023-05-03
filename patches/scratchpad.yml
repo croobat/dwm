@@ -3,8 +3,8 @@ import:
 
 window:
   dimensions:
-    columns: 200
-    lines: 55
+    columns: 220
+    lines: 60
 
 scrolling:
   history: 2000
@@ -25,7 +25,7 @@ font:
     family: JetBrains Mono Nerd Font
     style: Semibold Italic
 
-  size: 8.5
+  size: 8
 
   offset:
     x: 0
