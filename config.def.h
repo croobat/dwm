@@ -148,7 +148,7 @@ static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "alacritty",
     "-t", scratchpadname,
     "--config-file", "/home/tony/.config/dwm/patches/scratchpad.yml",
-    "-e", "tmux",
+    // "-e", "tmux",
   NULL
 };
 
