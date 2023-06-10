@@ -69,6 +69,7 @@ static const Rule rules[] = {
     { "qutebrowser", NULL,          NULL,           web,     0,    0,    0,    -1 },
     { firefox_dev,   NULL,          NULL,           brow,    0,    0,    0,    -1 },
     { chrome_dev,    NULL,          NULL,           brow,    0,    0,    0,    -1 },
+    { "DBeaver",     NULL,          NULL,           app,     0,    0,    0,    -1 },
     { NULL,          "libreoffice", NULL,           doc,     0,    0,    0,    -1 },
     { NULL,          NULL,          "LibreOffice",  doc,     0,    0,    0,    -1 },
     { NULL,          win_x11_xframe,NULL,           doc,     0,    0,    0,    -1 },
