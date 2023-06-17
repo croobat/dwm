@@ -32,7 +32,8 @@ static const char col_yellow[]      = "#f1fa8c";
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
     [SchemeNorm] = { col_white, col_black, col_black },
-    [SchemeSel]  = { col_white, col_light_gray,  col_purple },
+    [SchemeSel]  = { col_white, col_light_gray, col_purple },
+    [SchemeHid]  = { col_cyan,  col_black, col_cyan  },
 };
 
 /* tagging */
@@ -60,13 +61,14 @@ static const char chrome_dev[] = "Google-chrome-unstable";
 static const char foliate[] = "com.github.johnfactotum.Foliate";
 
 static const Rule rules[] = {
-	/* xprop(1):
-	*    WM_CLASS(STRING) = instance, class
-	*    WM_NAME(STRING) = title
-	*/
+    /* xprop(1):
+    *    WM_CLASS(STRING) = instance, class
+    *    WM_NAME(STRING) = title
+    */
     /* class        instance        title           mask   float term  swallow monitor */
     // Non floating windows
     { "qutebrowser", NULL,          NULL,           web,     0,    0,    0,    -1 },
+    { "firefox",     NULL,          NULL,           brow,    0,    0,    0,    -1 },
     { firefox_dev,   NULL,          NULL,           brow,    0,    0,    0,    -1 },
     { chrome_dev,    NULL,          NULL,           brow,    0,    0,    0,    -1 },
     { "DBeaver",     NULL,          NULL,           app,     0,    0,    0,    -1 },
@@ -146,12 +148,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-nb", col_black, "-nf", col_white, "-sb", col_light_gray, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "alacritty",
-    "-t", scratchpadname,
-    "--config-file", "/home/tony/.config/dwm/patches/scratchpad.yml",
-    // "-e", "tmux",
-  NULL
-};
+static const char scratchpadconfig[] = "/home/tony/.config/dwm/patches/scratchpad.yml";
+static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "--config-file", scratchpadconfig, NULL };
 
 /* Patches */
 #include "patches/shiftview.c" // Tag rotation
@@ -159,39 +157,55 @@ static const char *scratchpadcmd[] = { "alacritty",
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
-    { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-    // { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_backslash,togglescratch,{.v = scratchpadcmd } },
-    { MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
-    { MODKEY,                       XK_space,  togglescratch,  {.v =  scratchpadcmd } },
-    { MODKEY,                       XK_x,      togglebar,      {0} },
-    { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-    { MODKEY,                       XK_Tab,    focusstack,     {.i = +1 } },
-    { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-    { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+    { MODKEY,                       XK_j,      focusstackhid,  {.i = +1 } },
+    { MODKEY,                       XK_k,      focusstackhid,  {.i = -1 } },
+    { MODKEY|ShiftMask,             XK_k,      pushup,         {0} },
+    { MODKEY|ShiftMask,             XK_j,      pushdown,       {0} },
+    { MODKEY|ControlMask,           XK_j,      shiftview,      {.i = +1 } },
+    { MODKEY|ControlMask,           XK_k,      shiftview,      {.i = -1 } },
+    { MODKEY|ShiftMask|ControlMask, XK_j,      focusstackvis,  {.i = +1 } },
+    { MODKEY|ShiftMask|ControlMask, XK_k,      focusstackvis,  {.i = -1 } },
+
+    //                              XK_a
+    //                              XK_b,      bookmarks
+    //                              XK_c,      clipboard
     { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-    { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-    { MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-    { MODKEY,                       XK_z,      zoom,           {0} },
-    { MODKEY,                       XK_q,      killclient,     {0} },
-    { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-    { MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
-    { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+    //                              XK_e,      web browser
     { MODKEY,                       XK_f,      fullscreen,     {0} },
+    { MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
+    //                              XK_g
+    { MODKEY|ShiftMask,             XK_h,      hide,           {0} },
+    { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+    { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+    { MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+    { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+    //                              XK_n
+    //                              XK_o
+    { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+    { MODKEY,                       XK_q,      killclient,     {0} },
+    //                              XK_r,      dmenu
+    { MODKEY,                       XK_s,      show,           {0} },
+    { MODKEY|ShiftMask,             XK_s,      showall,        {0} },
+    { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+    //                              XK_u
+    //                              XK_v       pavucontrol
+    //                              XK_v       qutebrowser
+    { MODKEY,                       XK_x,      togglebar,      {0} },
+    //                              XK_y
+    { MODKEY,                       XK_z,      zoom,           {0} },
+
+    { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY|ControlMask,           XK_space,  togglefloating, {0} },
     { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-    { MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+    { MODKEY|ControlMask,           XK_period, tagswapmon,     {.i = -1 } },
     { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
     { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-    { MODKEY|ControlMask,           XK_k,      shiftview,      {.i = +1 } },
-    { MODKEY|ControlMask,           XK_j,      shiftview,      {.i = -1 } },
+    { MODKEY|ControlMask,           XK_comma,  tagswapmon,     {.i = +1 } },
+    { MODKEY,                       XK_period, focusmon,       {.i = +1 } },
     { MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
     { MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
     { MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
-    { MODKEY|ShiftMask,             XK_k,      pushup,         {0} },
-    { MODKEY|ShiftMask,             XK_j,      pushdown,       {0} },
-    { MODKEY|ControlMask,           XK_comma,  tagswapmon,     {.i = +1 } },
-    { MODKEY|ControlMask,           XK_period, tagswapmon,     {.i = -1 } },
+    { MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
     TAGKEYS(                        XK_3,                      2)
@@ -209,15 +223,16 @@ static Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
     /* click                event mask      button          function        argument */
+    { ClkTagBar,            0,              Button1,        view,           {0} },
     { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
-    { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
-    { ClkWinTitle,          0,              Button2,        zoom,           {0} },
-    { ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+    { ClkTagBar,            0,              Button2,        toggleview,     {0} },
+    // { ClkTagBar,            MODKEY,         Button2,        toggletag,      {0} },
+
     { ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
     { ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-    { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
-    { ClkTagBar,            0,              Button1,        view,           {0} },
-    { ClkTagBar,            0,              Button3,        toggleview,     {0} },
-    { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
-    { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+    // { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
+
+    // { ClkWinTitle,          0,              Button1,        togglewin,      {0} },
+
+    { ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 };
