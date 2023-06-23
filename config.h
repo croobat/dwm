@@ -57,9 +57,11 @@ static const char win_mysql_wb[] = "MySQL Workbench";
 static const char sscreenrec[] = "simplescreenrecorder";
 static const char steam_payp[] = "Log in to your PayPal account";
 static const char firefox_dev[] = "firefoxdeveloperedition";
+static const char chrome[] = "Google-chrome-stable";
 static const char chrome_dev[] = "Google-chrome-unstable";
 static const char foliate[] = "com.github.johnfactotum.Foliate";
 static const char notion[] = "notion-app-enhanced";
+static const char google_pixel[] = "Android Emulator - Pixel_6_API_30:5554";
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -71,6 +73,7 @@ static const Rule rules[] = {
     { "qutebrowser", NULL,          NULL,           web,     0,    0,    0,    -1 },
     { "firefox",     NULL,          NULL,           brow,    0,    0,    0,    -1 },
     { firefox_dev,   NULL,          NULL,           brow,    0,    0,    0,    -1 },
+    { chrome,        NULL,          NULL,           brow,    0,    0,    0,    -1 },
     { chrome_dev,    NULL,          NULL,           brow,    0,    0,    0,    -1 },
     { "DBeaver",     NULL,          NULL,           app,     0,    0,    0,    -1 },
     { NULL,          "libreoffice", NULL,           doc,     0,    0,    0,    -1 },
@@ -82,7 +85,6 @@ static const Rule rules[] = {
     { "Godot",       NULL,          NULL,           doc,     0,    0,    0,    -1 },
     { NULL,          NULL,          "sncli",        doc,     0,    0,    0,    -1 },
     { NULL,          NULL,          "Google Docs",  doc,     0,    0,    0,    -1 },
-    { "thunderbird", NULL,          NULL,           doc,     0,    0,    0,    -1 },
     { NULL,          foliate,       NULL,           app,     0,    0,    0,    -1 },
     { "Gimp",        NULL,          NULL,           app,     0,    0,    0,    -1 },
     { NULL,          NULL,          "Tachidesk",    app,     0,    0,    0,    -1 },
@@ -99,11 +101,13 @@ static const Rule rules[] = {
     { notion,        NULL,          NULL,           fun,     0,    0,    0,    -1 },
     { NULL,          sscreenrec,    NULL,           back,    0,    0,    0,    -1 },
     { "qBittorrent", NULL,          NULL,           back,    0,    0,    0,    -1 },
+    { "thunderbird", NULL,          NULL,           back,    0,    0,    0,    -1 },
 
     // Floating windows
     /* class        instance        title           mask   float term  swallow monitor */
     { "Pavucontrol", NULL,          NULL,           0,       1,    0,    0,    -1 },
     { "Gcolor3",     NULL,          NULL,           0,       1,    0,    0,    -1 },
+    { NULL,          NULL,          google_pixel,   0,       1,    0,    0,    -1 },
     { NULL,          NULL,          "Pick",         0,       1,    0,    0,    -1 },
     { NULL,          NULL,          win_qemu,       0,       1,    0,    0,    -1 },
     { "fontforge",   NULL,          "Open Font",    0,       1,    0,    0,    -1 },
@@ -173,7 +177,7 @@ static Key keys[] = {
     //                              XK_c,      clipboard
     { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
     //                              XK_e,      web browser
-    { MODKEY,                       XK_f,      fullscreen,     {0} },
+    // { MODKEY,                       XK_f,      fullscreen,     {0} },
     { MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
     //                              XK_g
     { MODKEY|ShiftMask,             XK_h,      hide,           {0} },
