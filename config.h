@@ -96,6 +96,7 @@ static const Rule rules[] = {
     { "discord",     NULL,          NULL,           call,    0,    0,    0,    -1 },
     { "zoom",        NULL,          NULL,           call,    0,    0,    0,    -1 },
     { "Trello",      NULL,          NULL,           fun,     0,    0,    0,    -1 },
+    { "whale",       NULL,          NULL,           fun,     0,    0,    0,    -1 },
     { "Steam",       NULL,          NULL,           fun,     0,    0,    0,    -1 },
     { NULL,          "retroarch",   NULL,           fun,     0,    0,    0,    -1 },
     { notion,        NULL,          NULL,           fun,     0,    0,    0,    -1 },
@@ -177,7 +178,7 @@ static Key keys[] = {
     //                              XK_c,      clipboard
     { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
     //                              XK_e,      web browser
-    // { MODKEY,                       XK_f,      fullscreen,     {0} },
+    { MODKEY|ShiftMask|ControlMask, XK_f,      fullscreen,     {0} },
     { MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
     //                              XK_g
     { MODKEY|ShiftMask,             XK_h,      hide,           {0} },

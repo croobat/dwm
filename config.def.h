@@ -178,7 +178,7 @@ static Key keys[] = {
     //                              XK_c,      clipboard
     { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
     //                              XK_e,      web browser
-    // { MODKEY,                       XK_f,      fullscreen,     {0} },
+    { MODKEY|ShiftMask|ControlMask, XK_f,      fullscreen,     {0} },
     { MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
     //                              XK_g
     { MODKEY|ShiftMask,             XK_h,      hide,           {0} },
