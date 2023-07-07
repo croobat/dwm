@@ -96,7 +96,7 @@ static const Rule rules[] = {
     { "discord",     NULL,          NULL,           call,    0,    0,    0,    -1 },
     { "zoom",        NULL,          NULL,           call,    0,    0,    0,    -1 },
     { "Trello",      NULL,          NULL,           fun,     0,    0,    0,    -1 },
-    { "whale",       NULL,          NULL,           fun,     0,    0,    0,    -1 },
+    { "Whale",       NULL,          NULL,           fun,     0,    0,    0,    -1 },
     { "Steam",       NULL,          NULL,           fun,     0,    0,    0,    -1 },
     { NULL,          "retroarch",   NULL,           fun,     0,    0,    0,    -1 },
     { notion,        NULL,          NULL,           fun,     0,    0,    0,    -1 },
