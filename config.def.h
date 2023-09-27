@@ -81,7 +81,6 @@ static const Rule rules[] = {
     { NULL,          win_x11_xframe,NULL,           doc,     0,    0,    0,    -1 },
     { "calibre",     NULL,          NULL,           doc,     0,    0,    0,    -1 },
     { NULL,          NULL,          "*DEBUG*",      doc,     0,    0,    0,    -1 },
-    { "VSCodium",    "vscodium",    NULL,           doc,     0,    0,    0,    -1 },
     { "Godot",       NULL,          NULL,           doc,     0,    0,    0,    -1 },
     { NULL,          NULL,          "sncli",        doc,     0,    0,    0,    -1 },
     { NULL,          NULL,          "Google Docs",  doc,     0,    0,    0,    -1 },
