@@ -106,6 +106,7 @@ static const Rule rules[] = {
     // Floating windows
     /* class        instance        title           mask   float term  swallow monitor */
     { "Pavucontrol", NULL,          NULL,           0,       1,    0,    0,    -1 },
+    { "kdeconnect.app",NULL,        NULL,           0,       1,    0,    0,    -1 },
     { "Gcolor3",     NULL,          NULL,           0,       1,    0,    0,    -1 },
     { NULL,          NULL,          google_pixel,   0,       1,    0,    0,    -1 },
     { NULL,          NULL,          "Pick",         0,       1,    0,    0,    -1 },
