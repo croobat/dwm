@@ -37,12 +37,12 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "Web", "Dev", "Brow", "App", "Doc", "Play", "Talk", "Chat", "Fun", "Back" };
+static const char *tags[] = { "Web", "Dev", "App", "Ide", "Doc", "Play", "Talk", "Chat", "Fun", "Back" };
 
 static const int web  = 1 << 0;
 static const int dev  = 1 << 1;
-static const int brow = 1 << 2;
-static const int app  = 1 << 3;
+static const int app  = 1 << 2;
+static const int ide  = 1 << 3;
 static const int doc  = 1 << 4;
 static const int play = 1 << 5;
 static const int call = 1 << 6;
@@ -61,7 +61,12 @@ static const char chrome[] = "Google-chrome-stable";
 static const char chrome_dev[] = "Google-chrome-unstable";
 static const char foliate[] = "com.github.johnfactotum.Foliate";
 static const char notion[] = "notion-app-enhanced";
-static const char google_pixel[] = "Android Emulator - Pixel_6_API_30:5554";
+static const char google_chat[] = "google-chat-linux";
+
+static const char as_jetbrains[] = "jetbrains-studio";
+static const char as_devicemgr[] = "Device Manager";
+static const char as_pixel_6pro[] = "Android Emulator - Pixel_6_Pro_API_34:5554";
+static const char as_emulator[] = "Emulator";
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -71,11 +76,15 @@ static const Rule rules[] = {
     /* class        instance        title           mask   float term  swallow monitor */
     // Non floating windows
     { "qutebrowser", NULL,          NULL,           web,     0,    0,    0,    -1 },
-    { "firefox",     NULL,          NULL,           brow,    0,    0,    0,    -1 },
-    { firefox_dev,   NULL,          NULL,           brow,    0,    0,    0,    -1 },
-    { chrome,        NULL,          NULL,           brow,    0,    0,    0,    -1 },
-    { chrome_dev,    NULL,          NULL,           brow,    0,    0,    0,    -1 },
-    { "DBeaver",     NULL,          NULL,           app,     0,    0,    0,    -1 },
+    { "firefox",     NULL,          NULL,           web,     0,    0,    0,    -1 },
+    { firefox_dev,   NULL,          NULL,           web,     0,    0,    0,    -1 },
+    { chrome,        NULL,          NULL,           web,     0,    0,    0,    -1 },
+    { chrome_dev,    NULL,          NULL,           web,     0,    0,    0,    -1 },
+    { NULL,          foliate,       NULL,           app,     0,    0,    0,    -1 },
+    { "Gimp",        NULL,          NULL,           app,     0,    0,    0,    -1 },
+    { NULL,          NULL,          "Tachidesk",    app,     0,    0,    0,    -1 },
+    { "Code",        NULL,          NULL,           ide,     0,    0,    0,    -1 },
+    { "DBeaver",     NULL,          NULL,           ide,     0,    0,    0,    -1 },
     { NULL,          "libreoffice", NULL,           doc,     0,    0,    0,    -1 },
     { NULL,          NULL,          "LibreOffice",  doc,     0,    0,    0,    -1 },
     { NULL,          win_x11_xframe,NULL,           doc,     0,    0,    0,    -1 },
@@ -84,14 +93,12 @@ static const Rule rules[] = {
     { "Godot",       NULL,          NULL,           doc,     0,    0,    0,    -1 },
     { NULL,          NULL,          "sncli",        doc,     0,    0,    0,    -1 },
     { NULL,          NULL,          "Google Docs",  doc,     0,    0,    0,    -1 },
-    { NULL,          foliate,       NULL,           app,     0,    0,    0,    -1 },
-    { "Gimp",        NULL,          NULL,           app,     0,    0,    0,    -1 },
-    { NULL,          NULL,          "Tachidesk",    app,     0,    0,    0,    -1 },
     { NULL,          NULL,          "cmus",         play,    0,    0,    0,    -1 },
     { NULL,          NULL,          "ncspot",       play,    0,    0,    0,    -1 },
     { NULL,          NULL,          "rofi-beats",   play,    0,    0,    0,    -1 },
     { NULL,          NULL,          "WhatsApp",     chat,    0,    0,    0,    -1 },
     { "Slack",       NULL,          NULL,           chat,    0,    0,    0,    -1 },
+    { google_chat,   NULL,          NULL,           chat,    0,    0,    0,    -1 },
     { "discord",     NULL,          NULL,           call,    0,    0,    0,    -1 },
     { "zoom",        NULL,          NULL,           call,    0,    0,    0,    -1 },
     { "Trello",      NULL,          NULL,           fun,     0,    0,    0,    -1 },
@@ -99,6 +106,7 @@ static const Rule rules[] = {
     { "Steam",       NULL,          NULL,           fun,     0,    0,    0,    -1 },
     { NULL,          "retroarch",   NULL,           fun,     0,    0,    0,    -1 },
     { notion,        NULL,          NULL,           fun,     0,    0,    0,    -1 },
+    { as_jetbrains,  NULL,          NULL,           fun,     0,    0,    0,    -1 },
     { NULL,          sscreenrec,    NULL,           back,    0,    0,    0,    -1 },
     { "qBittorrent", NULL,          NULL,           back,    0,    0,    0,    -1 },
     { "thunderbird", NULL,          NULL,           back,    0,    0,    0,    -1 },
@@ -108,7 +116,7 @@ static const Rule rules[] = {
     { "Pavucontrol", NULL,          NULL,           0,       1,    0,    0,    -1 },
     { "kdeconnect.app",NULL,        NULL,           0,       1,    0,    0,    -1 },
     { "Gcolor3",     NULL,          NULL,           0,       1,    0,    0,    -1 },
-    { NULL,          NULL,          google_pixel,   0,       1,    0,    0,    -1 },
+    { NULL,          NULL,          as_pixel_6pro,  0,       1,    0,    0,    -1 },
     { NULL,          NULL,          "Pick",         0,       1,    0,    0,    -1 },
     { NULL,          NULL,          win_qemu,       0,       1,    0,    0,    -1 },
     { "fontforge",   NULL,          "Open Font",    0,       1,    0,    0,    -1 },
@@ -119,6 +127,9 @@ static const Rule rules[] = {
     { NULL,          "peek",        NULL,           0,       1,    0,    0,    -1 },
     { NULL,          NULL,          steam_payp,     0,       1,    0,    0,    -1 },
     { NULL,          NULL,          "Bluetooth",    0,       1,    0,    0,    -1 },
+    { NULL,          NULL,          as_devicemgr,   fun,     1,    0,    0,    -1 },
+    { NULL,          NULL,          as_emulator,    app,     1,    0,    0,    -1 },
+    { NULL,          NULL,          as_pixel_6pro,  app,     1,    0,    0,    -1 },
     // Swallow windows
     /* class        instance        title           mask   float term  swallow monitor */
     { "Alacritty",   NULL,          NULL,           0,       0,    1,    0,    -1 },
