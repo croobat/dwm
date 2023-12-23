@@ -64,7 +64,6 @@ static const char notion[] = "notion-app-enhanced";
 static const char google_chat[] = "google-chat-linux";
 
 static const char as_jetbrains[] = "jetbrains-studio";
-static const char as_devicemgr[] = "Device Manager";
 static const char as_pixel_6pro[] = "Android Emulator - Pixel_6_Pro_API_34:5554";
 static const char as_emulator[] = "Emulator";
 
@@ -83,8 +82,10 @@ static const Rule rules[] = {
     { NULL,          foliate,       NULL,           app,     0,    0,    0,    -1 },
     { "Gimp",        NULL,          NULL,           app,     0,    0,    0,    -1 },
     { NULL,          NULL,          "Tachidesk",    app,     0,    0,    0,    -1 },
+    { "Reactotron",  NULL,          NULL,           app,     0,    0,    0,    -1 },
     { "Code",        NULL,          NULL,           ide,     0,    0,    0,    -1 },
     { "DBeaver",     NULL,          NULL,           ide,     0,    0,    0,    -1 },
+    { "Postman",     NULL,          NULL,           ide,     0,    0,    0,    -1 },
     { NULL,          "libreoffice", NULL,           doc,     0,    0,    0,    -1 },
     { NULL,          NULL,          "LibreOffice",  doc,     0,    0,    0,    -1 },
     { NULL,          win_x11_xframe,NULL,           doc,     0,    0,    0,    -1 },
@@ -104,7 +105,6 @@ static const Rule rules[] = {
     { "Trello",      NULL,          NULL,           fun,     0,    0,    0,    -1 },
     { "Whale",       NULL,          NULL,           fun,     0,    0,    0,    -1 },
     { "Steam",       NULL,          NULL,           fun,     0,    0,    0,    -1 },
-    { NULL,          "retroarch",   NULL,           fun,     0,    0,    0,    -1 },
     { notion,        NULL,          NULL,           fun,     0,    0,    0,    -1 },
     { as_jetbrains,  NULL,          NULL,           fun,     0,    0,    0,    -1 },
     { NULL,          sscreenrec,    NULL,           back,    0,    0,    0,    -1 },
@@ -127,7 +127,6 @@ static const Rule rules[] = {
     { NULL,          "peek",        NULL,           0,       1,    0,    0,    -1 },
     { NULL,          NULL,          steam_payp,     0,       1,    0,    0,    -1 },
     { NULL,          NULL,          "Bluetooth",    0,       1,    0,    0,    -1 },
-    { NULL,          NULL,          as_devicemgr,   fun,     1,    0,    0,    -1 },
     { NULL,          NULL,          as_emulator,    app,     1,    0,    0,    -1 },
     { NULL,          NULL,          as_pixel_6pro,  app,     1,    0,    0,    -1 },
     // Swallow windows
