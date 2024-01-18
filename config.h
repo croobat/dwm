@@ -165,7 +165,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-nb", col_black, "-nf", col_white, "-sb", col_light_gray, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char scratchpadconfig[] = "/home/tony/.config/dwm/patches/scratchpad.yml";
+static const char scratchpadconfig[] = "/home/tony/.config/dwm/patches/scratchpad.toml";
 static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "--config-file", scratchpadconfig, NULL };
 
 /* Patches */
