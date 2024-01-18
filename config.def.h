@@ -174,14 +174,14 @@ static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "--con
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
-    { MODKEY,                       XK_j,      focusstackhid,  {.i = +1 } },
-    { MODKEY,                       XK_k,      focusstackhid,  {.i = -1 } },
+    { MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
+    { MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
     { MODKEY|ShiftMask,             XK_k,      pushup,         {0} },
     { MODKEY|ShiftMask,             XK_j,      pushdown,       {0} },
-    { MODKEY|ControlMask,           XK_j,      shiftview,      {.i = +1 } },
-    { MODKEY|ControlMask,           XK_k,      shiftview,      {.i = -1 } },
-    { MODKEY|ShiftMask|ControlMask, XK_j,      focusstackvis,  {.i = +1 } },
-    { MODKEY|ShiftMask|ControlMask, XK_k,      focusstackvis,  {.i = -1 } },
+    { MODKEY|ControlMask,           XK_j,      focusstackhid,  {.i = +1 } },
+    { MODKEY|ControlMask,           XK_k,      focusstackhid,  {.i = -1 } },
+    { MODKEY|ShiftMask|ControlMask, XK_j,      shiftview,      {.i = +1 } },
+    { MODKEY|ShiftMask|ControlMask, XK_k,      shiftview,      {.i = -1 } },
 
     //                              XK_a
     //                              XK_b,      bookmarks
